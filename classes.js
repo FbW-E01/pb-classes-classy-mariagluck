@@ -74,9 +74,21 @@ class TV {
         this.volume = volume;
     }
 
-    tuneVolume() {  //  Math.random() * (max - min) + min;
-        const volumetuned = Math.round(Math.random() * 100);
-       console.log(`Current volume is ${volumetuned}`);
+    volumeUpp(n) { 
+        if (this.volume + n < 100) {
+           this.volume += n; 
+        } else if (this.volume + n > 100) 
+           {   this.volume = 100; }
+       console.log(`Current volume is ${this.volume}`);
+    }
+
+    volumeDown(n) {  //  Math.random() * (max - min) + min;
+        if ((this.volume - n) < 100 && (this.volume - n) > 0 ) {
+            this.volume = this.volume - n; 
+         } else if (this.volume -n < 0) 
+            {  this.volume = 0; }
+        console.log(`Current volume is ${this.volume}`);
+     
     }
     selectChannel() { //  Math.random() * (max - min) + min; (50 - 1) + 1) = 50
         const randomChannel = Math.round(Math.random() * 50);
@@ -98,10 +110,10 @@ console.log(tv1); //TV { brand: 'Panasonic', channel: 8, volume: 75 }
 
 tv1.status(); //Panasonic at channel 8, volume 75
 
-tv1.tuneVolume(); // e.g. Current volume is 42 
+tv1.volumeUpp(25); // Current volume is 75
+tv1.volumeDown(5); // Current volume is 70
 
-tv1.selectChannel(); //random channel number
-//prints : Current channel is 40 (a random number)
+tv1.selectChannel(); //prints : Current channel is 40 (a random number)
 
 tv1.reset(); // TV preferences have been resetted: channel is 1 and volume is 50
 
@@ -121,7 +133,7 @@ class Cylinder {
     
     }
     getVolume() {
-        const volume = (Math.PI * Math.pow(this.radius, 2)* this.height).toFixed(4);
+        const volume = (Math.PI * Math.pow(this.radius, 2) * this.height).toFixed(4);
         console.log(`The cylinder volume is: ${volume}`); 
     }
 }
