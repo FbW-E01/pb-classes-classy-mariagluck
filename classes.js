@@ -103,7 +103,9 @@ tv1.tuneVolume(); // e.g. Current volume is 42
 tv1.selectChannel(); //random channel number
 //prints : Current channel is 40 (a random number)
 
-tv1.status(); //TV preferences have been resetted: channel is 1 and volume is 50 
+tv1.reset(); // TV preferences have been resetted: channel is 1 and volume is 50
+
+tv1.status(); // Panasonic at channel 1, volume 50
 
 
 
