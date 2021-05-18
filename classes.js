@@ -82,7 +82,7 @@ class TV {
        console.log(`Current volume is ${this.volume}`);
     }
 
-    volumeDown(n) {  //  Math.random() * (max - min) + min;
+    volumeDown(n) {  
         if ((this.volume - n) < 100 && (this.volume - n) > 0 ) {
             this.volume = this.volume - n; 
          } else if (this.volume -n < 0) 
