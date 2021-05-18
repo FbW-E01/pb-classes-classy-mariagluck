@@ -96,7 +96,7 @@ const tv1 = new TV("Panasonic", 8, 75);
 
 console.log(tv1); //TV { brand: 'Panasonic', channel: 8, volume: 75 }
 
-tv1.status(); //Panasonic at channel , volume 75
+tv1.status(); //Panasonic at channel 8, volume 75
 
 tv1.tuneVolume(); // e.g. Current volume is 42 
 
